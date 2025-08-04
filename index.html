@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="assets/images/global/logo.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mindora - Quiz App</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header class="navbar" data-aos="fade-down">
+    <div class="logo">Mindora</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+    </nav>
+  </header>
+
+  <main class="home">
+
+    <section class="hero" data-aos="zoom-in">
+      <h1>Challenge Your Mind with <span>Mindora</span></h1>
+      <p>Test your brain across categories. Fast. Fun. Free.</p>
+      <a href="quiz.html" class="start-btn"><i class="fas fa-play"></i> Start Quiz</a>
+    </section>
+
+    <section class="how" id="how" data-aos="fade-up">
+      <h2><i class="fas fa-brain"></i> How It Works</h2>
+      <div class="steps">
+        <div class="step" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-list-ul"></i> Choose a Category</div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-clock"></i> Answer Timed Questions</div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-star"></i> Get Your Score Instantly</div>
+      </div>
+    </section>
+
+    <section class="categories" id="categories" data-aos="fade-up">
+      <h2><i class="fas fa-layer-group"></i> Popular Categories</h2>
+      <div class="cat-grid">
+        <div class="cat-box" data-aos="zoom-in">HTML</div>
+        <div class="cat-box" data-aos="zoom-in" data-aos-delay="100">CSS</div>
+        <div class="cat-box" data-aos="zoom-in" data-aos-delay="200">JavaScript</div>
+        <div class="cat-box" data-aos="zoom-in" data-aos-delay="300">Math</div>
+        <div class="cat-box" data-aos="zoom-in" data-aos-delay="400">General</div>
+        <div class="cat-box" data-aos="zoom-in" data-aos-delay="500">Logic</div>
+      </div>
+    </section>
+
+    <section class="features" id="features" data-aos="fade-up">
+      <h2><i class="fas fa-rocket"></i> Why Mindora?</h2>
+      <ul class="features-list">
+        <li data-aos="fade-left"><i class="fas fa-check-circle"></i> Sleek Dark Mode Interface</li>
+        <li data-aos="fade-left" data-aos-delay="100"><i class="fas fa-bolt"></i> Fast Performance and Responsive</li>
+        <li data-aos="fade-left" data-aos-delay="200"><i class="fas fa-shield-alt"></i> Secure and Safe</li>
+        <li data-aos="fade-left" data-aos-delay="300"><i class="fas fa-user-plus"></i> Add Your Own Questions (Coming Soon)</li>
+      </ul>
+    </section>
+
+    <section class="testimonials" id="testimonials" data-aos="fade-up">
+      <h2><i class="fas fa-comment-dots"></i> What Users Say</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-box" data-aos="fade-right">
+          <p><i class="fas fa-quote-left"></i> Mindora makes learning feel like a game! Love it! <i class="fas fa-quote-right"></i></p>
+          <span>- Alex</span>
+        </div>
+        <div class="testimonial-box" data-aos="fade-left">
+          <p><i class="fas fa-quote-left"></i> Clean design and smart features. 10/10! <i class="fas fa-quote-right"></i></p>
+          <span>- Lina</span>
+        </div>
+        <div class="testimonial-box" data-aos="fade-right">
+          <p><i class="fas fa-quote-left"></i> Funny System And I Liked The Ideas 10/10! <i class="fas fa-quote-right"></i></p>
+          <span>- John</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" data-aos="fade-up">
+      <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+      <p>Got a suggestion or question? Reach out via email at <a href="mailto:support@mindora.com">support@mindora.com</a></p>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Mindora. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('Particles loaded.');
+  });
+</script>
+
+</body>
+</html>

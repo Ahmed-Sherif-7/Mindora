@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+  --bg-dark: #08080b;
+  --card-bg: #121218;
+  --primary: #7649eb;
+  --primary-hover: #9c7eff;
+  --text-main: #f5f5f5;
+  --text-muted: #999999;
+  --correct: #3ccf7a;
+  --incorrect: #f25f5c;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --blur: blur(10px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Container */
+.quiz-container {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#category-screen h2 {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+#category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#category-buttons button {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  border: 2px solid var(--primary);
+  color: var(--text-main);
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#category-buttons button:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.quiz-top {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#question {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.answer {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--shadow);
+}
+
+.answer:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+.answer.correct {
+  border-color: var(--correct);
+  background-color: rgba(60, 207, 122, 0.15);
+}
+
+.answer.incorrect {
+  border-color: var(--incorrect);
+  background-color: rgba(242, 95, 92, 0.15);
+}
+
+/* Final Score */
+.final-score {
+  font-size: 26px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Results Section */
+.results-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Individual Result Card */
+.result-question {
+  background-color: var(--glass-bg);
+  padding: 16px;
+  border-radius: var(--radius);
+  border-left: 6px solid var(--incorrect);
+  box-shadow: var(--shadow);
+  color: var(--text-main);
+  width: 100%;
+}
+
+.result-question.correct {
+  border-left-color: var(--correct);
+}
+
+.result-question p {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+/* Buttons */
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+#nextBtn,
+#restartBtn {
+  padding: 14px 36px;
+  font-size: 17px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#nextBtn:hover,
+#restartBtn:hover {
+  background-color: var(--primary-hover);
+}
+
+#nextBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 600px) {
+  .answers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quiz-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-score {
+    font-size: 22px;
+  }
+
+  #question {
+    font-size: 22px;
+  }
+
+  #category-buttons button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+#progress-bar {
+  height: 8px;
+  background: var(--primary);
+  border-radius: var(--radius);
+  transition: width 0.4s ease;
+  width: 0%;
+  margin-top: 10px;
+}
+#loading-spinner {
+  text-align: center;
+  font-size: 18px;
+  padding: 30px;
+  color: var(--text-muted);
+}
+.category-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.category-meta span {
+  font-size: 14px;
+  color: var(--text-muted);
+} 
