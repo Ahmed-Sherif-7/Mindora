@@ -21,11 +21,6 @@
   scroll-behavior: smooth;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 body {
   font-family: 'Ubuntu', sans-serif;
   background-color: var(--bg-dark);
